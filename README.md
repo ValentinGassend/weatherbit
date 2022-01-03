@@ -3,25 +3,34 @@
 ```
 project
 │   README.md
+│   index.html
 │
-└───html
-│   
-└───libs 
-    │
-    └───css
+└───libs
     │
     └───img
-    │
-    └───init  
+        │
+        └───png
+        │
+        └───svg
     │
     └───js
     │
-    └───sass
-        │ 
-        └───base
-        │ 
-        └───components
-        │ 
-        └───layout
-        
+    └───init
+│
+└───css
+    │   style.css
+│
+└───sass
+    │   main.scss
+    │
+    └───abstract
+    │
+    └───base
+    │
+    └───components
+    │
+    └───layout
+    │
+    └───pages
+
 ```

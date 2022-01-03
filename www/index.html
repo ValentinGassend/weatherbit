@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>weatherbitAPI</title>
+    <link rel="icon" type="image/png" href="./libs/img/svg/other/favicon.png" />
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <meta name="author" content="Gassend Valentin">
+    <meta name="description" content="Utilisation de l'API de weatherbit">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./libs/init/reset.css" type="text/css" />
+    <link rel="stylesheet" href="./css/style.css" type="text/css" />
+</head>
+
+<body id="body">
+    <header>
+        <form id="form" method="post">
+            <div class="inputs">
+                <input type="search" placeholder="Search Localisation" id="postclick-search"
+                    src="./libs/img/svg/Search.svg" placeholder="Search a Location" value="" name="city">
+                <input type="submit" value="Today" id="search" name="submit">
+            </div>
+        </form>
+
+        <img id="preclick-search" onclick="search()" src="./libs/img/svg/Search.svg" alt="pre search icon">
+    </header>
+
+    <section>
+        <div class="left-column">
+            <p id="city"> Paris</p>
+
+            <p id="date">
+                Today 15 September</p>
+            <ul id="details">
+                <li id="wind">
+                    <p>wind</p>
+                    <p> 12 km/h <img src="./libs/img/svg/Wind.svg" alt="wind icon"></p>
+                </li>
+                <li id="sunrise">
+                    <p>sunrise</p>
+                    <p>06:45 <img src="./libs/img/svg/Sunrise.svg" alt="sunrise icon"></p>
+
+                </li>
+                <li id="sunset">
+                    <p>sunset</p>
+                    <p> 16:45<img src="./libs/img/svg/Sunset.svg" alt="sunset icon"></p>
+                </li>
+                <li id="precipitation">
+                    <p>precipitation</p>
+                    <p>2.5 mm <img src="./libs/img/svg/Precipitation.svg" alt="precipitation icon"></p>
+                </li>
+            </ul>
+
+        </div>
+
+        <div class="right-column">
+            <div class="temperature-icon">
+                <p id="temperature-icon">
+                    0°
+            </div>
+            </p>
+
+            <img class="weather-icon" id="weather-icon" alt="weather icon" src="./libs/img/svg/snowy.svg">
+        </div>
+
+        <!--200-202, 230-233, 300-302, 500-502, 511,520-522, 600-602, 610-612, 621-623, 700, 711, 721, 731, 741, 751, 800-804, 900-->
+    </section>
+
+    <footer>
+        <nav class="weekday">
+            <ul>
+                <li>
+                    <div class="btn-active"> Today
+                    </div>
+                </li>
+                <li>
+                    <div class="btn">Thursday</div>
+                </li>
+                <li>
+                    <div class="btn">Friday</div>
+                </li>
+                <li>
+                    <div class="btn">Saturday</div>
+                </li>
+                <li>
+                    <div class="btn">Sunday</div>
+                </li>
+                <li>
+                    <div class="btn">Monday</div>
+                </li>
+                <li>
+                    <div class="btn">Tuesday</div>
+                </li>
+            </ul>
+        </nav>
+
+        </div>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script src="./libs/js/main.js"></script>
+    </footer>
+
+</body>
+
+</html>
