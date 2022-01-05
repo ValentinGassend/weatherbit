@@ -3,7 +3,7 @@
 $curl = curl_init();
 
 curl_setopt_array($curl, [
-    CURLOPT_URL => "http://api.weatherbit.io/v2.0/forecast/minutely?city=Chamb%C3%A9ry&key=d53aea620e3f4d6dbe6266ecd670d135",
+    CURLOPT_URL => "http://api.weatherbit.io/v2.0/current?city=Chamb%C3%A9ry&key=d53aea620e3f4d6dbe6266ecd670d135",
     CURLOPT_RETURNTRANSFER => true,
     CURLOPT_ENCODING => "",
     CURLOPT_MAXREDIRS => 10,

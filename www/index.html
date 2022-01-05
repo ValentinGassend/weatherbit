@@ -31,27 +31,36 @@
 
     <section>
         <div class="left-column">
-            <p id="city"> Paris</p>
+            <p class="city" id="city"> Paris</p>
 
             <p id="date">
                 Today 15 September</p>
             <ul id="details">
-                <li id="wind">
+                <li class="wind">
                     <p>wind</p>
-                    <p> 12 km/h <img src="./libs/img/svg/Wind.svg" alt="wind icon"></p>
+                    <div>
+                        <p class="wind_value"> 12 km/h </p><img src="./libs/img/svg/Wind.svg" alt="wind icon">
+                    </div>
                 </li>
-                <li id="sunrise">
+                <li class="sunrise">
                     <p>sunrise</p>
-                    <p>06:45 <img src="./libs/img/svg/Sunrise.svg" alt="sunrise icon"></p>
-
+                    <div>
+                        <p class="sunrise_value">06:45 </p><img src="./libs/img/svg/Sunrise.svg" alt="sunrise icon">
+                    </div>
                 </li>
-                <li id="sunset">
+                <li class="sunset">
                     <p>sunset</p>
-                    <p> 16:45<img src="./libs/img/svg/Sunset.svg" alt="sunset icon"></p>
+                    <div>
+                        <p class="sunset_value"> 16:45 </p><img src="./libs/img/svg/Sunset.svg" alt="sunset icon">
+                    </div>
                 </li>
-                <li id="precipitation">
+                <li class="precipitation">
                     <p>precipitation</p>
-                    <p>2.5 mm <img src="./libs/img/svg/Precipitation.svg" alt="precipitation icon"></p>
+                    <div>
+                        <p class="precip_value">2.5 mm </p><img src="./libs/img/svg/Precipitation.svg"
+                            alt="precipitation icon">
+                    </div>
+
                 </li>
             </ul>
 
@@ -59,10 +68,10 @@
 
         <div class="right-column">
             <div class="temperature-icon">
-                <p id="temperature-icon">
+                <p class="temperature-icon">
                     0°
+                </p>
             </div>
-            </p>
 
             <img class="weather-icon" id="weather-icon" alt="weather icon" src="./libs/img/svg/snowy.svg">
         </div>
@@ -101,6 +110,9 @@
         </div>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
         <script src="./libs/js/main.js"></script>
+        <script src="./libs/js/script.js"></script>
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js"
+            integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
     </footer>
 
 </body>

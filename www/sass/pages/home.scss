@@ -22,6 +22,7 @@ section {
         margin-top: 48px;
         display: block;
         li {
+            
             justify-content: space-between;
             display: flex;
             width: 400px;
@@ -30,13 +31,13 @@ section {
             border-bottom: 1px solid white;
             padding-bottom: 2vh;
             padding-top: 2vh;
+            div {
+                display: flex;
+                align-items: center;
             img {
                 padding-left: 0.56vw;
             }
-            p {
-                display: flex;
-                align-items: center;
-            }
+        }
         }
     }
 }
@@ -56,7 +57,7 @@ section {
     float: left;
 }
 
-#temperature-icon {
+.temperature-icon {
     z-index: -1;
     font-size: 340px;
     color: #FFFFFF;
