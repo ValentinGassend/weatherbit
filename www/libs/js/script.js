@@ -7,48 +7,114 @@ const settings = {
 
 $.ajax(settings).done(function (response) {
     response = JSON.parse(response);
-    var time = new Date(response.data[0].ob_time);
+    const options = {
+        weekday: 'long',
+        month: 'long',
+        day: 'numeric'
+    };
+    const option = {
+        weekday: 'long',
+    };
+    var time = new Intl.DateTimeFormat('fr-FR', options).format(new Date(response.data[0].ob_time));
     console.log(response.data[0].city_name);
-    console.log(response.data[0].temp);
+    console.log(Math.round(response.data[0].temp));
     console.log(response.data[0]);
     console.log(response.data[0]);
-    console.log(response.data[0]);
-    console.log(response.data[0]);
+    console.log(response.data[0].weather.code);
+    $day = new Date(response.data[0].ob_time);
     $('p.city').text(response.data[0].city_name);
-    $('p.temperature-icon').text(response.data[0].temp + "°");
+    $('p#date').text(time);
+    $('p.temperature-icon').text(Math.round(response.data[0].temp) + "°");
     $('p.wind_value').text(Math.round(response.data[0].wind_spd * 3.6) + " km/h");
     $('p.sunrise_value').text(response.data[0].sunrise);
     $('p.sunset_value').text(response.data[0].sunset);
     $('p.precip_value').text(response.data[0].precip + ' mm');
-    if (!isNaN(time.getDay())) {
-        var day = "today";
-        switch (time.getDay()) {
-            case 0:
-                day = "Sun";
-                break;
-            case 1:
-                day = "Mon";
-                break;
-            case 2:
-                day = "Tue";
-                break;
-            case 3:
-                day = "Wed";
-                break;
-            case 4:
-                day = "Thu";
-                break;
-            case 5:
-                day = "Fri";
-                break;
-            case 6:
-                day = "Sat";
-                break;
-            default:
-                day = "O"; // we don't have a valid day
+    var icon_code = response.data[0].weather.code;
+
+
+
+    //Weather background switch
+    if (response.data[0].temp < 10) {
+        console.log("true");
+        $(document.body).css("background", "linear-gradient(72.85deg, #1DA9C2 0%, #F8AD48 100%)");
+    } else {
+        if (response.data[0].temp > 25) {
+            $(document.body).css("background", "linear-gradient(72.85deg, #D9547B 0%, #F8AD48 100%)");
+        } else {
+            $(document.body).css("background", "linear-gradient(72.85deg, #71376E 0%, #F8AD48 100%)");
         }
-
-
     }
-    $('p.precip_value').text(time.getDay());
+
+    //Weather Icon switch
+    //200-202 Rain_storm, 230-233 thnderstorm, 300-302 snowy, 500-502 rainy, 511 rainy,520-522 rainy, 600-602 snowy, 610-612 cloudy, 621-623 snowy, 700 partly_cloudy, 711 partly_cloudy, 721 partly_cloudy, 731 partly_cloudy, 741 partly_cloudy, 751 partly_cloudy, 800 slight_touch_happyday,801-804 partly_cloudy, 900
+    if (icon_code < 203) {
+        console.log("weather");
+        $('img.weather-icon').attr('src', "./libs/img/svg/Rain_storm.svg");
+    } else {
+        if (icon_code < 234) {
+            $('img.weather-icon').attr('src', "./libs/img/svg/thnderstorm.svg");
+        } else {
+            if (icon_code < 303) {
+                $('img.weather-icon').attr('src', "./libs/img/svg/snowy.svg");
+            } else {
+                if (icon_code < 503) {
+                    $('img.weather-icon').attr('src', "./libs/img/svg/rainy.svg");
+                } else {
+                    if (icon_code = 511) {
+                        $('img.weather-icon').attr('src', "./libs/img/svg/rainy.svg");
+                    } else {
+                        if (icon_code < 523) {
+                            $('img.weather-icon').attr('src', "./libs/img/svg/rainy.svg");
+                        } else {
+                            if (icon_code < 603) {
+                                $('img.weather-icon').attr('src', "./libs/img/svg/snowy.svg");
+                            } else {
+                                if (icon_code < 613) {
+                                    $('img.weather-icon').attr('src', "./libs/img/svg/cloudy.svg");
+                                } else {
+                                    if (icon_code < 624) {
+                                        $('img.weather-icon').attr('src', "./libs/img/svg/snowy.svg");
+                                    } else {
+                                        if (icon_code = 700) {
+                                            $('img.weather-icon').attr('src', "./libs/img/svg/partly_cloudy.svg");
+                                        } else {
+                                            if (icon_code = 711) {
+                                                $('img.weather-icon').attr('src', "./libs/img/svg/partly_cloudy.svg");
+                                            } else {
+                                                if (icon_code = 721) {
+                                                    $('img.weather-icon').attr('src', "./libs/img/svg/partly_cloudy.svg");
+                                                } else {
+                                                    if (icon_code = 731) {
+                                                        $('img.weather-icon').attr('src', "./libs/img/svg/partly_cloudy.svg");
+                                                    } else {
+                                                        if (icon_code = 741) {
+                                                            $('img.weather-icon').attr('src', "./libs/img/svg/partly_cloudy.svg");
+                                                        } else {
+                                                            if (icon_code = 751) {
+                                                                $('img.weather-icon').attr('src', "./libs/img/svg/partly_cloudy.svg");
+                                                            } else {
+                                                                if (icon_code = 800) {
+                                                                    $('img.weather-icon').attr('src', "./libs/img/svg/slight_touch_happyday.svg");
+                                                                } else {
+                                                                    if (icon_code < 805) {
+                                                                        $('img.weather-icon').attr('src', "./libs/img/svg/partly_cloudy.svg");
+                                                                    } else {
+                                                                        $('img.weather-icon').attr('src', "./libs/img/svg/cloudy.svg");
+                                                                    }
+                                                                }
+                                                            }
+                                                        }
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
 });
