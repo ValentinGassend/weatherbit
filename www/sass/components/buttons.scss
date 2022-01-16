@@ -4,7 +4,7 @@
     justify-content: center;
     align-items: center;
     padding: 2.5vh 2.22vw;
-    color: #FFFFFF;
+    color: $white;
 
     
     border-radius: 100px;
@@ -21,7 +21,7 @@ p{/* White */
     margin: 0.1em;
 }
 &:hover {
-    border: 1px solid #FFFFFF;
+    border: 1px solid $white;
     box-sizing: border-box;
     border-radius: 100px;
     cursor: pointer;
@@ -36,7 +36,7 @@ p{/* White */
 
     
     border-radius: 100px;
-    background-color: #FFFFFF;
+    background-color: $white;
     p{/* White */
         font-size: 14px;
     
