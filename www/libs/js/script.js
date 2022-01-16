@@ -8,12 +8,8 @@ const settings = {
 $.ajax(settings).done(function (response) {
     response = JSON.parse(response);
     const options = {
-        weekday: 'long',
         month: 'long',
         day: 'numeric'
-    };
-    const option = {
-        weekday: 'long',
     };
     var time = new Intl.DateTimeFormat('fr-FR', options).format(new Date(response.data[0].ob_time));
     console.log(response.data[0].city_name);
@@ -21,9 +17,8 @@ $.ajax(settings).done(function (response) {
     console.log(response.data[0]);
     console.log(response.data[0]);
     console.log(response.data[0].weather.code);
-    $day = new Date(response.data[0].ob_time);
     $('p.city').text(response.data[0].city_name);
-    $('p#date').text(time);
+    $('p#date').text("today " + time);
     $('p.temperature-icon').text(Math.round(response.data[0].temp) + "°");
     $('p.wind_value').text(Math.round(response.data[0].wind_spd * 3.6) + " km/h");
     $('p.sunrise_value').text(response.data[0].sunrise);
